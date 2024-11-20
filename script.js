@@ -4,7 +4,7 @@ async function sendEmails() {
     formData.append('action', 'sendEmails'); // The action to trigger sending emails
 
     try {
-        const response = await fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+        const response = await fetch('https://script.google.com/macros/s/AKfycbx7V0Ta4TlrE48mTdG7GZW0Lwgb5JOtH4Xx5q7QGzwTkgRp-vEVERp4WAB6P_O1chr2/exec', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -35,7 +35,7 @@ async function startOfferTimer() {
         }
 
         // Fetch the timestamp from the Google Apps Script backend
-        const response = await fetch(`https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec?action=getTimestamp&offerId=${offerId}`);
+        const response = await fetch(`https://script.google.com/macros/s/AKfycbx7V0Ta4TlrE48mTdG7GZW0Lwgb5JOtH4Xx5q7QGzwTkgRp-vEVERp4WAB6P_O1chr2/exec?action=getTimestamp&offerId=${offerId}`);
         const data = await response.json();
 
         if (data.success) {
