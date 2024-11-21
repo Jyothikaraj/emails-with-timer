@@ -27,15 +27,9 @@ async function sendEmails() {
 // Start the offer timer and handle countdown
 async function startOfferTimer() {
     try {
-        const urlParams = new URLSearchParams(window.location.search);
-        const offerId = urlParams.get('offerId');
-        if (!offerId) {
-            alert("Invalid offer ID.");
-            return;
-        }
 
         // Fetch the timestamp from the Google Apps Script backend
-        const response = await fetch(`https://script.google.com/macros/s/AKfycbx7V0Ta4TlrE48mTdG7GZW0Lwgb5JOtH4Xx5q7QGzwTkgRp-vEVERp4WAB6P_O1chr2/exec?action=getTimestamp&offerId=${offerId}`);
+        const response = await fetch(`https://script.google.com/macros/s/AKfycbx7V0Ta4TlrE48mTdG7GZW0Lwgb5JOtH4Xx5q7QGzwTkgRp-vEVERp4WAB6P_O1chr2/exec?action=getTimestamp`);
         const data = await response.json();
 
         if (data.success) {
